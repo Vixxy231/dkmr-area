@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DKMR AREA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--card:#101010;--in:#0d0d0d;--line:#222;--line2:#2c2c2c;--tx:#f4f4f4;--mu:#7d7d7d;--yl:#e8b130;--gr:#3ecf8e;--rd:#ff6b6b}
+*{box-sizing:border-box;margin:0;padding:0}html,body{background:var(--bg);color:var(--tx);font:13px/1.5 Inter,system-ui,sans-serif;min-height:100%}
+button,input{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit}:focus-visible{outline:2px solid var(--yl);outline-offset:2px}
+.mono,.lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--line);padding-top:calc(12px + env(safe-area-inset-top))}
+.logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:12px;letter-spacing:.02em}
+.eq{display:flex;gap:2px;align-items:flex-end;height:14px}.eq i{width:3px;border-radius:1px;background:var(--tx)}.eq i:nth-child(1){height:45%}.eq i:nth-child(2){height:100%;background:var(--yl)}.eq i:nth-child(3){height:70%}
+.badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;border:1px solid var(--line2);border-radius:5px;padding:2px 7px;color:var(--mu)}.badge:before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gr);margin-right:6px}
+.who{display:flex;gap:10px;align-items:center}.av{width:26px;height:26px;border-radius:50%;background:#222;display:grid;place-items:center;font-size:11px;overflow:hidden}.av img{width:100%;height:100%;object-fit:cover}
+.who button{background:none;border:0;color:var(--mu);font-size:11px}
+.tabs{display:flex;gap:6px;padding:10px 18px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs button{white-space:nowrap;background:none;border:1px solid transparent;border-radius:999px;padding:6px 13px;color:var(--mu);font-size:12px}.tabs button.on{background:#1b1b1b;border-color:var(--line2);color:var(--tx)}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+h1{font-size:25px;font-weight:700;letter-spacing:-.02em;margin:6px 0 4px}h1 span{color:#8a8a8a}.sub{color:var(--mu);font-size:12px;margin-bottom:20px}
+.win{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:18px;overflow:hidden}
+.wh{display:flex;align-items:center;gap:6px;padding:11px 14px;border-bottom:1px solid var(--line)}.wh i{width:8px;height:8px;border-radius:50%;background:#2a2a2a}
+.wh span{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mu)}.wh em{margin-left:auto;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;border:1px solid var(--line2);border-radius:5px;padding:2px 7px;color:var(--mu)}.wh a{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--mu);text-decoration:none;cursor:pointer}
+.wb{padding:16px}
+.alert{background:#17130a;border:1px solid #3a2e10;border-radius:10px;padding:13px 14px;margin-bottom:16px}.alert b{color:var(--tx);font-size:12px;display:flex;gap:8px;align-items:center}.alert b:before{content:'!';display:grid;place-items:center;width:14px;height:14px;border:1.5px solid var(--yl);border-radius:50%;color:var(--yl);font-size:9px}
+.alert p{color:var(--mu);font-size:11px;margin:5px 0 10px}.alert button{background:#1a1a1a;border:1px solid var(--line2);border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500}
+.quota{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:9px;padding:10px 12px;margin-bottom:18px}.quota b{font-size:14px}.quota .bar{width:26px;height:3px;background:#262626;border-radius:2px;overflow:hidden}.quota .bar i{display:block;height:100%;background:var(--tx)}
+.quota button{margin-left:auto;background:none;border:1px solid var(--line2);border-radius:6px;padding:3px 9px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;color:var(--mu)}
+.step{display:flex;align-items:center;gap:10px;margin:18px 0 12px}.step .d{width:9px;height:9px;border-radius:50%;border:1.5px solid #444;flex:none}.step.on .d{background:var(--tx);border-color:var(--tx)}.step .ln{flex:1;height:1px;background:var(--line)}.step .rt{font-size:11px;color:var(--mu);display:flex;gap:6px;align-items:center;font-family:'JetBrains Mono',monospace}.step .rt button{background:none;border:0;color:var(--tx);font-size:11px}
+.seg{display:flex;background:var(--in);border:1px solid var(--line);border-radius:9px;padding:3px;margin-bottom:12px}.seg button{flex:1;border:0;background:none;padding:8px;border-radius:7px;color:var(--mu);font-size:12px}.seg button.on{background:#1d1d1d;color:var(--tx)}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;width:100%;min-height:150px;border:1px dashed var(--line2);border-radius:10px;padding:22px 12px;cursor:pointer;color:var(--mu);font-size:11px}.drop.hot{border-color:var(--tx);background:#141414}
+.drop .ic{width:38px;height:38px;border-radius:50%;background:#1a1a1a;display:grid;place-items:center;margin-bottom:8px;color:var(--tx);font-size:16px}.drop b{color:var(--tx);font-size:12px;font-weight:600;word-break:break-all}
+.note{border:1px dashed var(--line2);border-radius:10px;padding:22px 14px;color:var(--mu);font-size:12px;text-align:center}
+.panel{border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:6px;display:grid;gap:14px}.panel label{display:flex;justify-content:space-between;color:var(--mu);font-size:11px;margin-bottom:6px}.panel label b{color:var(--tx);font-family:'JetBrains Mono',monospace}
+input[type=range]{width:100%;accent-color:#fff}.pre{display:flex;gap:6px;flex-wrap:wrap}.pre button{background:var(--in);border:1px solid var(--line2);border-radius:999px;padding:4px 11px;font-size:11px;color:var(--mu)}
+.chips{display:flex;gap:6px;align-items:center;color:var(--mu)}.chip{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;border:1px solid var(--line2);border-radius:5px;padding:3px 8px}
+.go{width:100%;border:0;border-radius:9px;padding:13px;font-weight:600;font-size:13px;background:#8c8c8c;color:#161616;margin-top:18px}.go.rdy{background:#f4f4f4}.go:disabled{cursor:not-allowed}.hint{text-align:center;color:var(--mu);font-size:11px;margin-top:9px}.err{color:var(--rd);font-size:12px;margin-top:8px}
+.it{border-bottom:1px solid var(--line)}.it:last-child{border-bottom:0}.ith{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;cursor:pointer;align-items:flex-start;background:none;border:0;width:100%;text-align:left}
+.ith b{font-weight:600;font-size:13px;display:block;word-break:break-word}.stp{display:flex;gap:12px;margin-top:6px;flex-wrap:wrap}.stp span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#4d4d4d}.stp span.ok{color:var(--gr)}.stp span.cur{color:var(--yl)}.stp span b{display:inline;margin-right:5px;font-weight:400}
+.ago{color:var(--mu);font-size:10px;white-space:nowrap;font-family:'JetBrains Mono',monospace}
+.bd{padding:0 16px 16px}.pbar{height:4px;background:#222;border-radius:3px;overflow:hidden;margin:10px 0 4px}.pbar i{display:block;height:100%;background:var(--tx);transition:width .4s}
+.btn{background:#1a1a1a;border:1px solid var(--line2);border-radius:8px;padding:8px 14px;font-weight:500;font-size:12px}.btn.pri{background:#f4f4f4;color:#111;border-color:#f4f4f4}.btn.red{background:none;border:0;color:var(--rd)}
+table.dt{width:100%;border:1px solid var(--line);border-radius:9px;border-collapse:separate;border-spacing:0;margin:14px 0;overflow:hidden}.dt td{padding:9px 12px;border-bottom:1px solid var(--line);font-size:11px}.dt tr:last-child td{border-bottom:0}.dt td:first-child{width:36%;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}.dt td:last-child{font-family:'JetBrains Mono',monospace;word-break:break-all}
+.id{font-family:'JetBrains Mono',monospace;background:var(--in);border:1px dashed var(--line2);border-radius:7px;padding:3px 9px;cursor:pointer}
+.row{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.lnk{background:none;border:0;color:var(--yl);text-decoration:underline;font-size:11px;padding:0}
+input[type=text]{width:100%;background:var(--in);border:1px solid var(--line);border-radius:9px;padding:11px 12px}
+.login{min-height:100vh;display:grid;place-items:center;padding:20px;text-align:center}.login .win{max-width:380px;width:100%}.login h1{font-size:24px;margin:14px 0 6px}
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:var(--tx);color:#111;padding:9px 16px;border-radius:9px;font-weight:600;z-index:9}
+</style></head><body>
+<div id="root"></div>
+<script>
+const $=(s,e=document)=>e.querySelector(s),api=async(u,o={})=>{const r=await fetch(u,o);let d={};try{d=await r.json()}catch{}if(!r.ok)throw Object.assign(new Error(d.error||'Terjadi kesalahan'),{status:r.status});return d};
+const J=(m,b)=>({method:m,headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MAXD=400,MAXUP=4.2*1024*1024,sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let me,tab='convert',file=null,cur=null,blobs={},warns={},times={},opened=new Set(),adv=false,sp=2.3,gn=-8,src='file',ffP=null;
+const loadJS=u=>new Promise((ok,no)=>{const e=document.createElement('script');e.src=u;e.onload=ok;e.onerror=()=>no(new Error('File mesin audio ('+u+') tidak ditemukan di server. Cek log build Netlify.'));document.head.append(e)});
+function getFF(){if(!ffP){ffP=(async()=>{const G=()=>window.FFmpegWASM||window.FFmpegWasm;if(!G())await loadJS('/ffmpeg/ffmpeg.js');const NS=G();if(!NS||!NS.FFmpeg)throw new Error('Mesin audio gagal dimuat (file ffmpeg.js tidak valid). Cek /ffmpeg/ffmpeg.js di situsmu.');const f=new NS.FFmpeg();await f.load({coreURL:'/ffmpeg/ffmpeg-core.js',wasmURL:'/ffmpeg/ffmpeg-core.wasm'});return f})().catch(e=>{ffP=null;throw e});}return ffP}
+function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.append(e);setTimeout(()=>e.remove(),2200)}
+const ago=t=>{const s=Math.max(1,Math.round((Date.now()-t)/1000));return s<60?s+' detik yang lalu':s<3600?Math.round(s/60)+' menit yang lalu':s<86400?Math.round(s/3600)+' jam yang lalu':Math.round(s/86400)+' hari yang lalu'};
+async function boot(){try{me=await api('/api/me')}catch{me=null}
+ const q=new URLSearchParams(location.search);if(q.get('err'))setTimeout(()=>toast('Login gagal, coba lagi'),300);if(q.get('roblox'))setTimeout(()=>toast('Akun Roblox terhubung'),300);history.replaceState({},'','/');render();if(me)getFF().catch(()=>{})}
+const refresh=async()=>{me=await api('/api/me')};
+function render(){
+ if(!me){$('#root').innerHTML=`<div class="login"><div class="win"><div class="wb" style="padding:34px 22px"><div class="logo" style="justify-content:center;font-size:14px"><span class="eq"><i></i><i></i><i></i></span>DKMR AREA</div><h1>Ubah lagu jadi audio siap Roblox</h1><p class="sub">Masuk dengan akun Discord kamu. Tidak perlu masuk server mana pun.</p><a href="/auth/discord"><button class="go rdy" style="margin:0">Masuk dengan Discord</button></a></div></div></div>`;return}
+ const T=[['convert','Konversi Audio'],['history','Riwayat'],['library','Library'],['album','Album'],['roblox','Akun Roblox']];
+ $('#root').innerHTML=`<header><div class="logo"><span class="eq"><i></i><i></i><i></i></span>DKMR AREA<span class="badge">CONSOLE</span></div><div class="who"><button id="out">Keluar</button><div class="av">${me.avatar?`<img src="${esc(me.avatar)}" alt="">`:esc(me.name[0]||'?')}</div></div></header><div class="tabs">${T.map(([k,v])=>`<button data-tab="${k}" class="${tab===k?'on':''}">${v}</button>`).join('')}</div><main id="view"></main>`;
+ $('#out').onclick=async()=>{await api('/auth/logout',{method:'POST'});me=null;render()};
+ ({convert:vConvert,history:vHistory,library:vLibrary,album:vAlbum,roblox:vRoblox})[tab]()}
+// ---------- Konversi
+function vConvert(){const left=me.limit==null?null:Math.max(0,me.limit-me.used);
+$('#view').innerHTML=`<div class="lbl">// 01 — convert</div><h1>Selamat datang, <span>${esc(me.name)}</span></h1><p class="sub">Unggah file MP3, atur kecepatan, lalu ambil OGG-nya. Prosesnya jalan di perangkatmu, jadi biarkan halaman tetap terbuka.</p>
+<div class="win"><div class="wh"><i></i><i></i><i></i><span>dkmr — convert</span><em>${me.owner?'OWNER':'FREE'}</em></div><div class="wb">
+${me.roblox?'':`<div class="alert"><b>Hubungkan akun Roblox terlebih dahulu</b><p>Hasil konversi otomatis diupload ke Roblox begitu akun terhubung. Tanpa itu, kamu cuma dapat file yang harus dipasang sendiri.</p><button data-tab="roblox">Hubungkan akun Roblox</button></div>`}
+<div class="quota"><span style="color:var(--yl)">⚡</span>${left==null?'<b>∞</b><span class="mono">UNLIMITED</span>':`<b>${left}</b><span class="mono">/${me.limit} TERSISA HARI INI</span><span class="bar"><i style="width:${me.limit?100*left/me.limit:0}%"></i></span>`}</div>
+<div class="step on"><span class="d"></span><span class="mono">01 &nbsp;SUMBER</span><span class="ln"></span></div>
+<div class="seg"><button data-src="url" class="${src==='url'?'on':''}">Tempel link</button><button data-src="file" class="${src==='file'?'on':''}">Upload file</button></div>
+${src==='file'?`<label class="drop" id="drop" for="f"><input type="file" id="f" accept="audio/mpeg,.mp3" hidden><span class="ic">⇪</span><b id="fn">${file?esc(file.name):'Drag & drop file MP3 kamu di sini'}</b><span>atau klik untuk pilih file (Maks 15MB)</span></label>`:`<div class="note">Tempel link YouTube/SoundCloud butuh server khusus dan belum tersedia di versi Netlify ini. Gunakan Upload file.</div>`}
+<div class="step ${file?'on':''}" style="margin-top:20px"><span class="d"></span><span class="mono">02 &nbsp;SUARA</span><span class="ln"></span><span class="rt">Default · ${sp.toFixed(1)}x · ${gn} dB <button id="adv">Ubah ${adv?'⌃':'⌄'}</button></span></div>
+${adv?`<div class="panel"><div><label>Kecepatan <b id="sv"></b></label><input type="range" id="sp" min="0.5" max="4" step="0.1" value="${sp}"><div class="mono" id="sn" style="margin-top:4px;text-transform:none"></div></div><div><label>Volume <b id="gv"></b></label><input type="range" id="gn" min="-30" max="20" step="1" value="${gn}"></div><div class="pre"><button data-p="1,0">Normal</button><button data-p="1.5,-4">Ringan</button><button data-p="2.3,-8">Ekstrem</button><button data-p="3,-10">Maksimal</button></div></div>`:''}
+<div class="step"><span class="d"></span><span class="mono">03 &nbsp;TUJUAN</span><span class="ln"></span></div>
+<div class="chips"><span class="chip">KONVERSI</span>›<span class="chip">${me.roblox?'UNGGAH':'UNDUH'}</span></div>
+<button class="go ${file&&src==='file'?'rdy':''}" id="go" ${cur&&!cur.done?'disabled':''}>Konversi Audio</button><div class="hint">${file&&src==='file'?'Siap dikonversi':'Pilih berkas untuk lanjut'}</div><div class="err" id="er"></div></div></div>
+<div class="win"><div class="wh"><i></i><i></i><i></i><span>dkmr — recent</span><a data-tab="history">LIHAT SEMUA →</a></div><div id="rec"></div></div>`;
+const upd=()=>{if(!$('#sp'))return;sp=+$('#sp').value;gn=+$('#gn').value;$('#sv').textContent=sp.toFixed(1)+'x';$('#gv').textContent=gn+' dB';$('#sn').textContent='Kecepatan normal di game: '+(1/sp).toFixed(2)};
+if($('#sp')){$('#sp').oninput=$('#gn').oninput=()=>{upd()};$('#sp').onchange=$('#gn').onchange=vConvert;upd()}
+document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{[sp,gn]=b.dataset.p.split(',').map(Number);vConvert()});
+document.querySelectorAll('[data-src]').forEach(b=>b.onclick=()=>{src=b.dataset.src;vConvert()});
+$('#adv').onclick=()=>{adv=!adv;vConvert()};
+const dz=$('#drop');if(dz){const set=f=>{if(f){file=f;vConvert()}};$('#f').onchange=e=>set(e.target.files[0]);dz.ondragover=e=>{e.preventDefault();dz.classList.add('hot')};dz.ondragleave=()=>dz.classList.remove('hot');dz.ondrop=e=>{e.preventDefault();set(e.dataTransfer.files[0])}}
+$('#go').onclick=()=>{$('#er').textContent='';if(src!=='file'||!file)return $('#er').textContent='Pilih file MP3 dulu';if(file.size>15*1024*1024)return $('#er').textContent='File lebih dari 15MB';run(file,sp,gn)};
+paintRec()}
+const STEPS=['Konversi','Unggah','Tinjauan','Di Game'];
+function item(t,live){const si=live?live.si:(t.asset_id?4:1),id=live?'live':t.id,op=opened.has(id)||live&&!live.done&&!live.err;
+ const stp=`<div class="stp">${STEPS.map((n,i)=>`<span class="${i<si?'ok':i===si&&live&&!live.err?'cur':''}"><b>${i<si?'✓':'○'}</b>${n}</span>`).join('')}</div>`;
+ const w=(live?live.warn:warns[t.id]);
+ return `<div class="it"><button class="ith" data-tg="${id}"><div><b>${esc(t.title)}</b>${stp}</div><span class="ago">${live?(live.done?'':esc(live.stage)):ago(t.created)} ${op?'⌃':'⌄'}</span></button>${op?`<div class="bd">${live&&!live.done?`<div class="pbar"><i style="width:${live.p}%"></i></div>`:''}${live&&live.err?`<div class="err">${esc(live.err)}</div>`:''}${w?`<div class="err">${esc(w)}</div>`:''}
+ ${!live&&blobs[t.id]?`<button class="btn" data-dl="${t.id}">⇩ Unduh OGG</button>`:''}${t.asset_id?`<div class="row" style="margin-top:12px"><span class="mono">ID audio Roblox</span><span class="id" data-copy="${esc(t.asset_id)}">${esc(t.asset_id)}</span></div>`:''}
+ ${live?'':`<div class="lbl" style="margin-top:14px">Detail</div><table class="dt"><tr><td>Sumber</td><td>DIUNGGAH ${esc(t.title)}</td></tr><tr><td>Kecepatan</td><td>${t.speed}x · Durasi Maks: ${MAXD}s</td></tr><tr><td>Speed normal (di game)</td><td>${(1/t.speed).toFixed(2)}</td></tr><tr><td>Tanggal</td><td>${new Date(t.created).toLocaleString('id-ID')}</td></tr>${times[t.id]?`<tr><td>Waktu</td><td>Total ${times[t.id]} dtk</td></tr>`:''}</table>
+ ${me.roblox||t.asset_id?'':`<button class="lnk" data-tab="roblox">Hubungkan akun Roblox</button>`}<div class="row" style="margin-top:10px"><button class="btn" data-al="${t.id}">+ Album</button><button class="btn red" data-del="${t.id}">🗑 Hapus</button></div>`}</div>`:''}</div>`}
+function paintRec(){const l=$('#rec');if(!l)return;const a=me.tracks.slice(0,3);l.innerHTML=(cur&&!cur.done||cur&&cur.err?item({title:cur.title},cur):'')+(a.length?a.map(t=>item(t)).join(''):(cur?'':'<div class="bd" style="padding-top:16px;color:var(--mu)">Belum ada konversi.</div>'))}
+const lv=o=>{Object.assign(cur,o);if(tab==='convert')paintRec()};
+function save(b,t){const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=(t.replace(/[^\w\- ]+/g,'').trim()||'audio')+'.ogg';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000)}
+async function encode(ff,f,speed,gain,q){await ff.writeFile('in.mp3',new Uint8Array(await f.arrayBuffer()));await ff.exec(['-t',String(MAXD),'-i','in.mp3','-vn','-af',`asetrate=${Math.round(44100*speed)},aresample=44100,volume=${gain}dB`,'-c:a','libvorbis','-q:a',String(q),'out.ogg']);const d=await ff.readFile('out.ogg');await ff.deleteFile('in.mp3');await ff.deleteFile('out.ogg');return new Blob([d],{type:'audio/ogg'})}
+async function run(f,speed,gain){const t0=Date.now(),title=f.name.replace(/\.[^.]+$/,'').slice(0,120);cur={title,stage:'Memeriksa jatah',p:2,si:0,done:false};vConvert();
+ try{await api('/api/reserve',{method:'POST'});lv({stage:'Menyiapkan mesin',p:6});const ff=await getFF();ff.off&&ff.off('progress');ff.on('progress',({progress})=>lv({p:10+Math.round(Math.max(0,Math.min(1,progress))*70)}));
+  const tr=await api('/api/track',J('POST',{title,speed,gain}));lv({stage:'Konversi',p:10});let blob=await encode(ff,f,speed,gain,4);
+  if(me.roblox&&blob.size>MAXUP){lv({stage:'Mengecilkan',p:60});blob=await encode(ff,f,speed,gain,1)}
+  blobs[tr.id]=blob;lv({p:82,si:1});
+  if(me.roblox){if(blob.size>MAXUP)warns[tr.id]='File terlalu besar untuk upload otomatis (maks 4MB). Unduh lalu upload manual.';
+   else try{lv({stage:'Unggah',p:85});const r=await api('/api/upload',{method:'POST',headers:{'x-track':tr.id,'Content-Type':'application/octet-stream'},body:blob});lv({si:2,stage:'Tinjauan'});
+    for(let i=0;i<40;i++){await sleep(3000);const o=await api(`/api/op?op=${encodeURIComponent(r.op)}&track=${tr.id}`);if(o.done){if(o.error)throw new Error(o.error);break}}
+   }catch(e){warns[tr.id]='Upload Roblox gagal: '+e.message}}
+  times[tr.id]=Math.round((Date.now()-t0)/1000);file=null;cur=null;await refresh();opened.add(tr.id);if(tab==='convert')vConvert()
+ }catch(e){lv({err:e.message,done:true});await refresh().catch(()=>{});if(tab==='convert')vConvert()}}
+// ---------- Halaman lain
+function vHistory(){$('#view').innerHTML=`<div class="lbl">// 02 — history</div><h1>Riwayat</h1><p class="sub">Tombol unduh hanya ada untuk hasil yang dibuat di sesi ini, jadi simpan filenya setelah selesai.</p><div class="win" id="hl">${me.tracks.length?me.tracks.map(t=>item(t)).join(''):'<div class="bd" style="padding-top:16px;color:var(--mu)">Belum ada konversi.</div>'}</div>`}
+function vLibrary(){$('#view').innerHTML=`<div class="lbl">// 03 — library</div><h1>Library</h1><p class="sub">Audio yang sudah punya ID Roblox.</p><input type="text" id="q" placeholder="Cari judul atau ID" style="margin-bottom:14px"><div class="win" id="ll"></div>`;const p=()=>{const q=$('#q').value.toLowerCase(),a=me.tracks.filter(t=>t.asset_id&&(t.title.toLowerCase().includes(q)||t.asset_id.includes(q)));$('#ll').innerHTML=a.length?a.map(t=>`<div class="it"><div class="ith" style="cursor:default"><div><b>${esc(t.title)}</b><div class="mono" style="margin-top:4px;text-transform:none">${t.speed}x · normal di game ${(1/t.speed).toFixed(2)}</div></div><span class="id" data-copy="${esc(t.asset_id)}">${esc(t.asset_id)}</span></div></div>`).join(''):'<div class="bd" style="padding-top:16px;color:var(--mu)">Belum ada audio terunggah. Hubungkan Roblox lalu konversi lagu.</div>'};$('#q').oninput=p;p()}
+function vAlbum(){const T=Object.fromEntries(me.tracks.map(t=>[t.id,t]));$('#view').innerHTML=`<div class="lbl">// 04 — album</div><h1>Album</h1><p class="sub">Kelompokkan lagu favoritmu.</p><div class="win"><div class="wb row" style="flex-wrap:nowrap"><input type="text" id="an" placeholder="Nama album baru"><button class="btn pri" id="ab" style="white-space:nowrap">Buat album</button></div></div>${me.albums.map(a=>`<div class="win"><div class="wh"><span style="margin:0;color:var(--tx)">${esc(a.name)}</span><a data-da="${a.id}" style="color:var(--rd)">HAPUS</a></div>${a.items.filter(i=>T[i]).length?a.items.filter(i=>T[i]).map(i=>`<div class="it"><div class="ith" style="cursor:default"><b>${esc(T[i].title)}</b><span>${T[i].asset_id?`<span class="id" data-copy="${esc(T[i].asset_id)}">${esc(T[i].asset_id)}</span> `:''}<button class="btn" data-ri="${a.id}|${i}">Keluarkan</button></span></div></div>`).join(''):'<div class="bd" style="padding-top:14px;color:var(--mu)">Kosong. Tambah lewat tombol "+ Album" di Riwayat.</div>'}</div>`).join('')}`;
+ $('#ab').onclick=async()=>{try{await api('/api/albums',J('POST',{name:$('#an').value}));await refresh();vAlbum()}catch(e){toast(e.message)}}}
+function vRoblox(){$('#view').innerHTML=`<div class="lbl">// 05 — roblox</div><h1>Akun Roblox</h1><p class="sub">Dipakai untuk mengunggah audio langsung ke akunmu.</p><div class="win"><div class="wb">${me.roblox?`<div class="row"><div><b>${esc(me.roblox.name)}</b><div class="mono" style="margin-top:4px;text-transform:none">Terhubung · ID ${esc(me.roblox.id)}</div></div><button class="btn red" id="dc">Putuskan</button></div>`:me.robloxEnabled?`<p style="margin-bottom:14px;color:var(--mu)">Belum terhubung. Setelah terhubung, hasil konversi otomatis diunggah dan kamu langsung mendapat ID audio.</p><a href="/auth/roblox"><button class="go rdy" style="margin:0">Hubungkan akun Roblox</button></a>`:'<p style="color:var(--mu)">Fitur ini belum dikonfigurasi admin (ROBLOX_CLIENT_ID belum diisi).</p>'}</div></div>`;const d=$('#dc');if(d)d.onclick=async()=>{await api('/api/roblox/disconnect',{method:'POST'});await refresh();vRoblox()}}
+// ---------- Klik global
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-tab],[data-tg],[data-dl],[data-del],[data-al],[data-copy],[data-da],[data-ri]');if(!b)return;const d=b.dataset;
+ if(d.tab){tab=d.tab;return render()}
+ if(d.tg){opened.has(d.tg)?opened.delete(d.tg):opened.add(d.tg);return tab==='convert'?paintRec():vHistory()}
+ if(d.copy){navigator.clipboard&&navigator.clipboard.writeText(d.copy);return toast('ID disalin')}
+ if(d.dl){const t=me.tracks.find(x=>x.id===d.dl);return save(blobs[t.id],t.title)}
+ try{if(d.del&&confirm('Hapus item ini?')){await api('/api/track/'+d.del,{method:'DELETE'});delete blobs[d.del];await refresh();render()}
+ if(d.al){const A=me.albums;if(!A.length)return toast('Buat album dulu di tab Album');const n=prompt('Masukkan ke album mana?\n'+A.map((a,i)=>`${i+1}. ${a.name}`).join('\n'));const a=A[(+n||0)-1];if(a){await api(`/api/albums/${a.id}/items`,J('POST',{track:d.al}));await refresh();toast('Masuk ke '+a.name)}}
+ if(d.da&&confirm('Hapus album?')){await api('/api/albums/'+d.da,{method:'DELETE'});await refresh();vAlbum()}
+ if(d.ri){const[a,j]=d.ri.split('|');await api(`/api/albums/${a}/items/${j}`,{method:'DELETE'});await refresh();vAlbum()}}catch(er){toast(er.message)}});
+boot();
+</script></body></html>
