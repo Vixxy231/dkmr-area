@@ -1,0 +1,18 @@
+[build]
+  command = "npm install && node build.js"
+  publish = "public"
+  functions = "netlify/functions"
+[functions]
+  node_bundler = "esbuild"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200
+[[redirects]]
+  from = "/auth/*"
+  to = "/.netlify/functions/api"
+  status = 200
+[[headers]]
+  for = "/ffmpeg/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

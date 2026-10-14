@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DKMR AREA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14172b;--panel:#1d2140;--panel2:#262b52;--line:#343a6b;--text:#eef0ff;--mute:#9aa0cf;--pink:#ff5c8a;--amber:#ffc857;--ok:#5be0a8;--bad:#ff7a7a;--r:14px}
+*{box-sizing:border-box;margin:0}html,body{background:var(--bg);color:var(--text);font:15px/1.5 'DM Sans',system-ui,sans-serif;min-height:100%}
+h1,h2,h3,.brand{font-family:'Bricolage Grotesque',sans-serif}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.app{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+nav{background:#101324;border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh}
+.brand{font-weight:800;font-size:20px;letter-spacing:.5px;display:flex;align-items:center;gap:10px;padding:0 8px 18px}
+.eq{display:flex;gap:3px;align-items:flex-end;height:22px}.eq i{width:4px;background:var(--pink);border-radius:2px;animation:eq 1.1s ease-in-out infinite}
+.eq i:nth-child(1){height:40%}.eq i:nth-child(2){height:100%;animation-delay:.2s;background:var(--amber)}.eq i:nth-child(3){height:65%;animation-delay:.4s}
+@keyframes eq{50%{transform:scaleY(.35)}}@media(prefers-reduced-motion:reduce){.eq i{animation:none}}
+nav button.t{background:none;border:0;text-align:left;padding:10px 12px;border-radius:10px;color:var(--mute);font-weight:500}
+nav button.t.on{background:var(--panel2);color:var(--text)}nav .sp{flex:1}
+.me{display:flex;gap:10px;align-items:center;padding:10px;background:var(--panel);border-radius:12px;font-size:13px}
+.me img{width:34px;height:34px;border-radius:50%;background:var(--panel2)}.me b{display:block;font-size:14px}
+main{padding:30px clamp(16px,4vw,44px) 60px;max-width:860px;width:100%}
+h1{font-size:clamp(26px,5vw,36px);font-weight:800;line-height:1.1;margin-bottom:6px}.sub{color:var(--mute);margin-bottom:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:16px}
+.btn{background:var(--pink);color:#1a0b12;border:0;border-radius:10px;padding:11px 18px;font-weight:600}
+.btn.alt{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.btn.sm{padding:6px 12px;font-size:13px}.btn.danger{background:none;color:var(--bad);border:1px solid #5a3550}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.seg{display:flex;background:var(--bg);border-radius:10px;padding:4px;gap:4px;margin-bottom:14px}.seg button{flex:1;border:0;background:none;padding:8px;border-radius:8px;color:var(--mute)}.seg button.on{background:var(--panel2);color:var(--text)}
+.drop{border:2px dashed var(--line);border-radius:var(--r);padding:34px 14px;text-align:center;color:var(--mute);cursor:pointer}.drop.hot{border-color:var(--pink);background:#2a2347}.drop b{color:var(--text);display:block}
+input[type=text],input[type=url]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px}
+.dial{display:grid;gap:16px;margin:16px 0}.dial label{display:flex;justify-content:space-between;color:var(--mute);font-size:13px;margin-bottom:6px}.dial label b{color:var(--amber);font-size:18px;font-family:'Bricolage Grotesque'}
+input[type=range]{width:100%;accent-color:var(--pink)}
+.pre{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}.pre button{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-size:13px;color:var(--mute)}
+.warn{background:#3a2f1f;border:1px solid #6b5522;color:var(--amber);border-radius:12px;padding:12px 14px;margin-bottom:16px;font-size:14px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.row{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.job h3{font-size:16px;margin-bottom:4px;word-break:break-word}.meta{color:var(--mute);font-size:13px}
+.bar{height:6px;background:var(--bg);border-radius:4px;overflow:hidden;margin:10px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pink),var(--amber));transition:width .4s}
+.tag{font-size:12px;padding:2px 9px;border-radius:20px;background:var(--panel2)}.tag.ok{color:var(--ok)}.tag.bad{color:var(--bad)}
+.id{font-family:ui-monospace,monospace;background:var(--bg);padding:4px 10px;border-radius:8px;color:var(--amber);cursor:pointer;border:1px dashed var(--line)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.err{color:var(--bad);font-size:13px;margin-top:8px}
+.login{min-height:100vh;display:grid;place-items:center;padding:20px;text-align:center}.login .card{max-width:400px;padding:34px}.login h1{font-size:34px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 18px;border-radius:10px;font-weight:600;z-index:9}
+select{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px}
+@media(max-width:760px){.app{grid-template-columns:1fr}nav{position:fixed;bottom:0;left:0;right:0;top:auto;height:auto;flex-direction:row;padding:6px 6px calc(6px + env(safe-area-inset-bottom));border-top:1px solid var(--line);border-right:0;z-index:5;justify-content:space-around}
+nav .brand,nav .sp,nav .me{display:none}nav button.t{text-align:center;padding:10px 8px;font-size:13px}main{padding-top:calc(22px + env(safe-area-inset-top));padding-bottom:100px}.mhead{display:flex!important}}
+.mhead{display:none;align-items:center;justify-content:space-between;margin-bottom:16px}
+</style></head><body>
+<div id="root"></div>
+<script src="/ffmpeg/ffmpeg.js"></script>
+<script>
+const $=(s,e=document)=>e.querySelector(s),api=async(u,o={})=>{const r=await fetch(u,o);let d={};try{d=await r.json()}catch{}if(!r.ok)throw Object.assign(new Error(d.error||'Terjadi kesalahan'),{status:r.status});return d};
+const J=(m,b)=>({method:m,headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MAXD=400,MAXUP=4.2*1024*1024;let me,tab='convert',file=null,cur=null,ff=null,blobs={};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let ffP=null;function getFF(){if(!ffP){const f=new FFmpegWasm.FFmpeg();ffP=f.load({coreURL:'/ffmpeg/ffmpeg-core.js',wasmURL:'/ffmpeg/ffmpeg-core.wasm'}).then(()=>f).catch(e=>{ffP=null;throw e})}return ffP}
+function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.append(e);setTimeout(()=>e.remove(),2200)}
+async function boot(){try{me=await api('/api/me')}catch{me=null}
+ const q=new URLSearchParams(location.search);if(q.get('err'))setTimeout(()=>toast('Login gagal, coba lagi'),300);if(q.get('roblox'))setTimeout(()=>toast('Akun Roblox terhubung'),300);history.replaceState({},'','/');render();if(me)getFF().catch(()=>{})}
+async function refresh(){me=await api('/api/me')}
+function render(){
+ if(!me){$('#root').innerHTML=`<div class="login"><div class="card"><div class="brand" style="justify-content:center;font-size:26px;padding-bottom:10px"><span class="eq"><i></i><i></i><i></i></span>DKMR AREA</div><h1>Ubah lagu jadi audio siap Roblox</h1><p class="sub" style="margin-top:10px">Masuk dengan akun Discord kamu. Tidak perlu masuk server mana pun.</p><a href="/auth/discord"><button class="btn" style="width:100%">Masuk dengan Discord</button></a></div></div>`;return}
+ const T=[['convert','Konversi'],['history','Riwayat'],['library','Library'],['album','Album'],['roblox','Roblox']];
+ $('#root').innerHTML=`<div class="app"><nav><div class="brand"><span class="eq"><i></i><i></i><i></i></span>DKMR AREA</div>${T.map(([k,v])=>`<button class="t ${tab===k?'on':''}" data-t="${k}">${v}</button>`).join('')}<div class="sp"></div><div class="me">${me.avatar?`<img src="${esc(me.avatar)}" alt="">`:'<img alt="">'}<div><b>${esc(me.name)}</b><a href="#" id="out" style="color:var(--mute)">Keluar</a></div></div></nav><main><div class="mhead"><b class="brand">DKMR AREA</b><a href="#" id="out2" style="color:var(--mute)">Keluar</a></div><div id="view"></div></main></div>`;
+ document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{tab=b.dataset.t;render()});
+ $('#out').onclick=$('#out2').onclick=async e=>{e.preventDefault();await api('/auth/logout',{method:'POST'});me=null;render()};
+ ({convert:vConvert,history:vHistory,library:vLibrary,album:vAlbum,roblox:vRoblox})[tab]()}
+// ----- Konversi (jalan di browser)
+function vConvert(){const left=me.limit==null?'Unlimited':`${Math.max(0,me.limit-me.used)}/${me.limit} tersisa`;
+$('#view').innerHTML=`<h1>Halo, ${esc(me.name)}</h1><p class="sub">Unggah MP3, atur kecepatan, lalu ambil OGG-nya. Prosesnya jalan di perangkatmu, jadi biarkan halaman tetap terbuka.</p>
+${me.roblox?'':`<div class="warn"><span>Hubungkan akun Roblox agar hasil otomatis terunggah dan kamu langsung dapat ID audio.</span><button class="btn sm alt" id="goRb">Hubungkan Roblox</button></div>`}
+<div class="card"><div class="row" style="margin-bottom:12px"><b>Sisa jatah hari ini</b><span class="tag">${left}</span></div>
+<label class="drop" id="drop"><input type="file" id="f" accept="audio/mpeg,.mp3" hidden><b id="fn">${file?esc(file.name):'Seret MP3 ke sini'}</b>atau ketuk untuk memilih (maks 15MB)</label>
+<div class="dial"><div><label>Kecepatan <b id="sv">2.3x</b></label><input type="range" id="sp" min="0.5" max="4" step="0.1" value="2.3"><div class="meta" id="sn" style="margin-top:4px"></div></div>
+<div><label>Volume <b id="gv">-8 dB</b></label><input type="range" id="gn" min="-30" max="20" step="1" value="-8"></div>
+<div class="pre"><button data-p="1,0">Normal</button><button data-p="1.5,-4">Ringan</button><button data-p="2.3,-8">Ekstrem</button><button data-p="3,-10">Maksimal</button></div></div>
+<button class="btn" id="go" style="width:100%" ${cur&&!cur.done?'disabled':''}>Konversi audio</button><div class="err" id="er"></div></div><div id="live"></div>`;
+const upd=()=>{$('#sv').textContent=(+$('#sp').value).toFixed(1)+'x';$('#gv').textContent=$('#gn').value+' dB';$('#sn').textContent='Kecepatan normal di game: '+(1/$('#sp').value).toFixed(2)};
+$('#sp').oninput=$('#gn').oninput=upd;upd();
+document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{const[s,g]=b.dataset.p.split(',');$('#sp').value=s;$('#gn').value=g;upd()});
+if($('#goRb'))$('#goRb').onclick=()=>{tab='roblox';render()};
+const dz=$('#drop'),set=f=>{if(f){file=f;$('#fn').textContent=f.name}};$('#f').onchange=e=>set(e.target.files[0]);dz.ondragover=e=>{e.preventDefault();dz.classList.add('hot')};dz.ondragleave=()=>dz.classList.remove('hot');dz.ondrop=e=>{e.preventDefault();dz.classList.remove('hot');set(e.dataTransfer.files[0])};
+$('#go').onclick=()=>{$('#er').textContent='';if(!file)return $('#er').textContent='Pilih file MP3 dulu';if(file.size>15*1024*1024)return $('#er').textContent='File lebih dari 15MB';run(file,+$('#sp').value,+$('#gn').value)};
+paintLive()}
+function paintLive(){const l=$('#live');if(!l)return;if(!cur){l.innerHTML='';return}
+ l.innerHTML=`<div class="card job"><div class="row"><h3>${esc(cur.title)}</h3><span class="tag ${cur.err?'bad':cur.done?'ok':''}">${cur.err?'Gagal':cur.done?'Selesai':cur.stage}</span></div>${cur.done?'':`<div class="bar"><i style="width:${cur.p}%"></i></div>`}${cur.err?`<div class="err">${esc(cur.err)}</div>`:''}${cur.warn?`<div class="err">${esc(cur.warn)}</div>`:''}${cur.asset?`<div class="row" style="margin-top:10px"><span class="meta">ID audio Roblox</span><span class="id" data-copy="${esc(cur.asset)}">${esc(cur.asset)}</span></div>`:''}${cur.blob?`<div class="acts"><button class="btn sm" id="dl">Unduh OGG</button></div>`:''}</div>`;bind(l);const d=$('#dl');if(d)d.onclick=()=>save(cur.blob,cur.title)}
+function save(b,t){const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=(t.replace(/[^\w\- ]+/g,'').trim()||'audio')+'.ogg';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000)}
+const upd2=(o)=>{Object.assign(cur,o);if(tab==='convert')paintLive()};
+async function encode(f,speed,gain,q){await ff.writeFile('in.mp3',new Uint8Array(await f.arrayBuffer()));
+ await ff.exec(['-t',String(MAXD),'-i','in.mp3','-vn','-af',`asetrate=${Math.round(44100*speed)},aresample=44100,volume=${gain}dB`,'-c:a','libvorbis','-q:a',String(q),'out.ogg']);
+ const d=await ff.readFile('out.ogg');await ff.deleteFile('in.mp3');await ff.deleteFile('out.ogg');return new Blob([d],{type:'audio/ogg'})}
+async function run(f,speed,gain){const title=f.name.replace(/\.[^.]+$/,'').slice(0,120);cur={title,stage:'Memeriksa jatah',p:2,done:false};vConvert();
+ try{await api('/api/reserve',{method:'POST'});
+  upd2({stage:'Menyiapkan mesin audio',p:6});ff=await getFF();
+  ff.off&&ff.off('progress');ff.on('progress',({progress})=>upd2({p:10+Math.round(Math.max(0,Math.min(1,progress))*70)}));
+  const tr=await api('/api/track',J('POST',{title,speed,gain}));
+  upd2({stage:'Mengonversi ke OGG',p:10});let blob=await encode(f,speed,gain,4);
+  if(me.roblox&&blob.size>MAXUP){upd2({stage:'Mengecilkan ukuran',p:60});blob=await encode(f,speed,gain,1)}
+  blobs[tr.id]=blob;upd2({blob,p:82});
+  if(me.roblox){
+   if(blob.size>MAXUP){upd2({warn:'File terlalu besar untuk diunggah otomatis (maks 4MB). Unduh lalu upload manual, atau pakai lagu yang lebih pendek.'})}
+   else try{upd2({stage:'Mengunggah ke Roblox',p:85});const r=await api('/api/upload',{method:'POST',headers:{'x-track':tr.id,'Content-Type':'application/octet-stream'},body:blob});
+    for(let i=0;i<40;i++){await sleep(3000);const o=await api(`/api/op?op=${encodeURIComponent(r.op)}&track=${tr.id}`);if(o.done){if(o.error)throw new Error(o.error);upd2({asset:o.asset_id});break}}
+   }catch(e){upd2({warn:'Upload Roblox gagal: '+e.message})}}
+  upd2({done:true,stage:'Selesai',p:100});await refresh();if(tab==='convert')vConvert()
+ }catch(e){upd2({err:e.message,done:true});await refresh().catch(()=>{})}}
+// ----- Daftar
+function trackCard(t){return `<div class="card job"><div class="row"><div><h3>${esc(t.title)}</h3><div class="meta">${t.speed}x · ${t.gain} dB · ${new Date(t.created).toLocaleString('id-ID')}</div></div>${t.asset_id?`<span class="id" data-copy="${esc(t.asset_id)}">${esc(t.asset_id)}</span>`:'<span class="tag">Belum ada ID</span>'}</div><div class="acts">${blobs[t.id]?`<button class="btn sm" data-dl="${t.id}">Unduh OGG</button>`:''}<button class="btn sm alt" data-al="${t.id}">Ke album</button><button class="btn sm danger" data-del="${t.id}">Hapus</button></div></div>`}
+function bind(el){el.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(b.dataset.copy);toast('ID disalin')});
+ el.querySelectorAll('[data-dl]').forEach(b=>b.onclick=()=>{const t=me.tracks.find(x=>x.id===b.dataset.dl);save(blobs[t.id],t.title)});
+ el.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{if(confirm('Hapus item ini?')){await api('/api/track/'+b.dataset.del,{method:'DELETE'});delete blobs[b.dataset.del];await refresh();render()}});
+ el.querySelectorAll('[data-al]').forEach(b=>b.onclick=async()=>{const A=me.albums;if(!A.length)return toast('Buat album dulu di tab Album');const n=prompt('Masukkan ke album mana?\n'+A.map((a,i)=>`${i+1}. ${a.name}`).join('\n'));const a=A[(+n||0)-1];if(a){await api(`/api/albums/${a.id}/items`,J('POST',{track:b.dataset.al}));await refresh();toast('Masuk ke '+a.name)}})}
+function vHistory(){$('#view').innerHTML='<h1>Riwayat</h1><p class="sub">Semua konversimu. Tombol unduh hanya muncul untuk hasil yang dibuat di sesi ini, jadi simpan filenya setelah selesai.</p><div id="hl"></div>';const l=$('#hl');l.innerHTML=me.tracks.length?me.tracks.map(trackCard).join(''):'<div class="card meta">Belum ada konversi. Mulai dari tab Konversi.</div>';bind(l)}
+function vLibrary(){$('#view').innerHTML='<h1>Library</h1><p class="sub">Audio yang sudah punya ID Roblox.</p><input type="text" id="q" placeholder="Cari judul atau ID" style="margin-bottom:16px"><div id="ll"></div>';const p=()=>{const q=$('#q').value.toLowerCase(),a=me.tracks.filter(t=>t.asset_id&&(t.title.toLowerCase().includes(q)||t.asset_id.includes(q)));$('#ll').innerHTML=a.length?a.map(t=>`<div class="card row"><div><h3 style="font-size:16px">${esc(t.title)}</h3><div class="meta">${t.speed}x · normal di game ${(1/t.speed).toFixed(2)}</div></div><span class="id" data-copy="${esc(t.asset_id)}">${esc(t.asset_id)}</span></div>`).join(''):'<div class="card meta">Belum ada audio terunggah. Hubungkan Roblox lalu konversi lagu.</div>';bind($('#ll'))};$('#q').oninput=p;p()}
+function vAlbum(){const T=Object.fromEntries(me.tracks.map(t=>[t.id,t]));$('#view').innerHTML=`<h1>Album</h1><p class="sub">Kelompokkan lagu favoritmu.</p><div class="card row"><input type="text" id="an" placeholder="Nama album baru" style="flex:1;min-width:160px"><button class="btn" id="ab">Buat album</button></div>${me.albums.map(a=>`<div class="card"><div class="row"><h3>${esc(a.name)}</h3><button class="btn sm danger" data-da="${a.id}">Hapus album</button></div>${a.items.length?a.items.filter(i=>T[i]).map(i=>`<div class="row" style="padding:8px 0;border-top:1px solid var(--line)"><span>${esc(T[i].title)}</span><span>${T[i].asset_id?`<span class="id" data-copy="${esc(T[i].asset_id)}">${esc(T[i].asset_id)}</span> `:''}<button class="btn sm alt" data-ri="${a.id}|${i}">Keluarkan</button></span></div>`).join(''):'<div class="meta" style="margin-top:8px">Kosong. Tambah lewat tombol "Ke album" di Riwayat.</div>'}</div>`).join('')}`;
+ $('#ab').onclick=async()=>{try{await api('/api/albums',J('POST',{name:$('#an').value}));await refresh();vAlbum()}catch(e){toast(e.message)}};
+ document.querySelectorAll('[data-da]').forEach(b=>b.onclick=async()=>{if(confirm('Hapus album?')){await api('/api/albums/'+b.dataset.da,{method:'DELETE'});await refresh();vAlbum()}});
+ document.querySelectorAll('[data-ri]').forEach(b=>b.onclick=async()=>{const[a,j]=b.dataset.ri.split('|');await api(`/api/albums/${a}/items/${j}`,{method:'DELETE'});await refresh();vAlbum()});bind($('#view'))}
+function vRoblox(){$('#view').innerHTML=`<h1>Akun Roblox</h1><p class="sub">Dipakai untuk mengunggah audio langsung ke akunmu.</p><div class="card">${me.roblox?`<div class="row"><div><b>${esc(me.roblox.name)}</b><div class="meta">Terhubung · ID ${esc(me.roblox.id)}</div></div><button class="btn danger sm" id="dc">Putuskan</button></div>`:me.robloxEnabled?`<p style="margin-bottom:14px">Belum terhubung. Setelah terhubung, hasil konversi otomatis diunggah dan kamu langsung mendapat ID audio.</p><a href="/auth/roblox"><button class="btn">Hubungkan akun Roblox</button></a>`:'<p class="meta">Fitur ini belum dikonfigurasi admin (ROBLOX_CLIENT_ID belum diisi).</p>'}</div>`;
+ const d=$('#dc');if(d)d.onclick=async()=>{await api('/api/roblox/disconnect',{method:'POST'});await refresh();vRoblox()}}
+boot();
+</script></body></html>
